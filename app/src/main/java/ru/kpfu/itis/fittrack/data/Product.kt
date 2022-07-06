@@ -3,6 +3,8 @@ package ru.kpfu.itis.fittrack.data
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
+
 //TODO: решить проблему дубликатов в бд
 //TODO: заполнить бд для продуктов и рецептов, но сделать такие элементы, которые нельзя удалить
 @Entity
@@ -22,4 +24,4 @@ data class Product (
     var fats: Float,
     @ColumnInfo(name = "carbohydrates_product")
     var carbohydrates: Float
-): BaseEntity(id, title, calories)
+): BaseEntity(id, title, calories), Serializable
